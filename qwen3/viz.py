@@ -171,8 +171,7 @@ def plot_confusion_matrix_from_counts(
     fig, ax = plt.subplots(figsize=(5.5, 5))
     # Anchor the color scale at zero so cell shade tracks absolute count,
     # keeping the white/black text-contrast threshold meaningful
-    im = ax.imshow(cm, cmap='Blues', vmin=0)
-    fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+    ax.imshow(cm, cmap='Blues', vmin=0)
 
     ax.set_xticks(range(num_classes))
     ax.set_yticks(range(num_classes))

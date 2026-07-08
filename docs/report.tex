@@ -128,9 +128,11 @@ both the training batches and periodic validation checkpoints.}
 \section{Generation}
 Text generation supports greedy decoding as well as temperature, top-$k$, and
 nucleus (top-$p$) sampling, with optional repetition and no-repeat-$n$-gram
-penalties. A key-value cache makes single-prompt generation incremental. At this
-model scale the samples are locally coherent and reflect the simple TinyStories
-style rather than long-range narrative structure.
+penalties. A key-value cache makes single-prompt generation incremental; rotary
+positions are offset by the cached length so a cached decode matches a full
+forward pass token for token. At this model scale the samples are coherent within
+a few sentences and reflect the simple TinyStories style rather than long-range
+narrative structure.
 
 \section{Sentiment transfer}
 The downstream task is binary sentiment classification over 16{,}000
@@ -259,6 +261,7 @@ GPU, and confidence intervals over repeated training runs to capture seed
 variance in addition to test-set sampling.
 
 \begin{thebibliography}{9}
+\raggedright
 
 \bibitem{su2021roformer}
 J.~Su et al., ``RoFormer: Enhanced Transformer with Rotary Position Embedding,''

@@ -88,6 +88,8 @@ Design choices:
   share the exact test split, so every comparison is like-for-like.
 - A fixed seed (42) governs splitting, shuffling, and initialization. Each stage writes
   committed JSON artifacts that later figure regeneration consumes.
+- Generation uses a key-value cache that offsets rotary positions by the cached length,
+  so incremental decoding matches a full forward pass token for token.
 
 ## Key figures
 
@@ -106,8 +108,8 @@ complete pre-training plus sentiment run takes on the order of an hour, so headl
 metrics come from the committed artifacts rather than a required rerun.
 
 ```bash
-git clone https://github.com/Rhines7/qwen3-mini-llm.git
-cd qwen3-mini-llm
+git clone https://github.com/Rhines7/from-scratch-mini-llm.git
+cd from-scratch-mini-llm
 pip install -r requirements.txt
 ```
 

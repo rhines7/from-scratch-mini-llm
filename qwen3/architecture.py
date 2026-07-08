@@ -181,14 +181,22 @@ class RotaryPositionEmbedding(nn.Module):
         self.register_buffer('cos_cached', freqs.cos(), persistent=False)
         self.register_buffer('sin_cached', freqs.sin(), persistent=False)
 
-    def forward(self, x: torch.Tensor, seq_len: int) -> torch.Tensor:
-        """Apply RoPE to x of shape (batch, num_heads, seq_len, head_dim)."""
-        # Extend cache if a longer sequence than seen before arrives
-        if seq_len > self.max_seq_len:
-            self._precompute_freqs_cis(seq_len)
+    def forward(self, x: torch.Tensor, seq_len: int, offset: int = 0) -> torch.Tensor:
+        """Apply RoPE to x of shape (batch, num_heads, seq_len, head_dim).
 
-        cos = self.cos_cached[:seq_len].unsqueeze(0).unsqueeze(0)  # (1, 1, seq_len, head_dim/2)
-        sin = self.sin_cached[:seq_len].unsqueeze(0).unsqueeze(0)
+        offset is the absolute position of the first token in x. During cached
+        decoding only the new token(s) are passed, so offset equals the number of
+        tokens already in the KV cache; without it the new token would always be
+        rotated as position 0 and RoPE would carry no positional signal.
+        """
+        # Extend cache when the absolute span exceeds what has been precomputed
+        total_len = offset + seq_len
+        if total_len > self.max_seq_len:
+            self._precompute_freqs_cis(total_len)
+            self.max_seq_len = total_len
+
+        cos = self.cos_cached[offset:offset + seq_len].unsqueeze(0).unsqueeze(0)  # (1, 1, seq_len, head_dim/2)
+        sin = self.sin_cached[offset:offset + seq_len].unsqueeze(0).unsqueeze(0)
 
         # Split into halves and apply the 2D rotation
         x1, x2 = x.chunk(2, dim=-1)
@@ -280,9 +288,11 @@ class MultiHeadAttention(nn.Module):
         key = key.view(batch_size, seq_len, self.num_kv_heads, self.head_dim).transpose(1, 2)
         value = value.view(batch_size, seq_len, self.num_kv_heads, self.head_dim).transpose(1, 2)
 
-        # RoPE on queries and keys
-        query = self.rope(query, seq_len)
-        key = self.rope(key, seq_len)
+        # RoPE on queries and keys, offset by the cached length so the new
+        # token(s) get their true absolute positions rather than restarting at 0
+        past_len = past_key_value[0].size(2) if past_key_value is not None else 0
+        query = self.rope(query, seq_len, offset=past_len)
+        key = self.rope(key, seq_len, offset=past_len)
 
         # Append cached K/V during incremental generation
         if past_key_value is not None:
