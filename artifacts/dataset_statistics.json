@@ -1,0 +1,41 @@
+{
+  "num_stories": 10000,
+  "train_size": 8000,
+  "val_size": 1000,
+  "test_size": 1000,
+  "vocab_size": 7392,
+  "vocab_coverage": 99.84026357119969,
+  "max_seq_len": 256,
+  "batch_size": 8,
+  "vocab_stats": {
+    "vocab_size": 7392,
+    "coverage": 99.84026357119969,
+    "total_tokens": 1641454,
+    "unique_tokens": 10010,
+    "min_frequency": 2
+  },
+  "length_stats": {
+    "min": 56,
+    "max": 1084,
+    "mean": 205.18175,
+    "median": 182.0,
+    "std": 91.9621482836145,
+    "percentile_50": 182.0,
+    "percentile_90": 294.0,
+    "percentile_95": 406.0,
+    "percentile_99": 583.0100000000002,
+    "recommended_max_seq_len": 406,
+    "coverage_95": 95.0125
+  },
+  "config": {
+    "num_stories": 10000,
+    "train_ratio": 0.8,
+    "val_ratio": 0.1,
+    "test_ratio": 0.1,
+    "vocab_size": 20000,
+    "min_frequency": 2,
+    "max_seq_len": 256,
+    "batch_size": 8,
+    "random_seed": 42
+  }
+}

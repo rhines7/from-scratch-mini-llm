@@ -1,0 +1,17 @@
+{
+  "parameters_total": 19520000,
+  "parameters_trainable": 19520000,
+  "parameters_millions": 19.52,
+  "expected_total": 19520000,
+  "difference": 0,
+  "config": {
+    "vocab_size": 7392,
+    "d_model": 512,
+    "num_layers": 6,
+    "num_heads": 8,
+    "num_kv_heads": 8,
+    "intermediate_size": 1024,
+    "max_seq_len": 256,
+    "tie_embeddings": true
+  }
+}

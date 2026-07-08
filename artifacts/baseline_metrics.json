@@ -1,0 +1,128 @@
+{
+  "dataset": {
+    "total": 16000,
+    "positive": 7238,
+    "negative": 8762,
+    "test_size": 1600
+  },
+  "majority_class": {
+    "accuracy": 0.56,
+    "negative_precision": 0.56,
+    "negative_recall": 1.0,
+    "negative_f1": 0.717948717948718,
+    "positive_precision": 0.0,
+    "positive_recall": 0.0,
+    "positive_f1": 0.0,
+    "macro_f1": 0.358974358974359,
+    "predicted_label": 0,
+    "confidence_intervals": {
+      "method": "percentile_bootstrap",
+      "n_boot": 1000,
+      "confidence": 0.95,
+      "accuracy": {
+        "point": 0.56,
+        "lower": 0.53625,
+        "upper": 0.5843906249999999
+      },
+      "macro_f1": {
+        "point": 0.358974358974359,
+        "lower": 0.34906427990235966,
+        "upper": 0.368842513952924
+      },
+      "negative_precision": {
+        "point": 0.56,
+        "lower": 0.53625,
+        "upper": 0.5843906249999999
+      },
+      "negative_recall": {
+        "point": 1.0,
+        "lower": 1.0,
+        "upper": 1.0
+      },
+      "negative_f1": {
+        "point": 0.717948717948718,
+        "lower": 0.6981285598047193,
+        "upper": 0.737685027905848
+      },
+      "positive_precision": {
+        "point": 0.0,
+        "lower": 0.0,
+        "upper": 0.0
+      },
+      "positive_recall": {
+        "point": 0.0,
+        "lower": 0.0,
+        "upper": 0.0
+      },
+      "positive_f1": {
+        "point": 0.0,
+        "lower": 0.0,
+        "upper": 0.0
+      }
+    }
+  },
+  "tfidf_logreg": {
+    "accuracy": 0.931875,
+    "negative_precision": 0.9208556149732621,
+    "negative_recall": 0.9609375,
+    "negative_f1": 0.9404696886947024,
+    "positive_precision": 0.9473684210526315,
+    "positive_recall": 0.8948863636363636,
+    "positive_f1": 0.9203798392987582,
+    "macro_f1": 0.9304247639967302,
+    "confidence_intervals": {
+      "method": "percentile_bootstrap",
+      "n_boot": 1000,
+      "confidence": 0.95,
+      "accuracy": {
+        "point": 0.931875,
+        "lower": 0.91875,
+        "upper": 0.94375
+      },
+      "macro_f1": {
+        "point": 0.9304247639967302,
+        "lower": 0.9172094590555537,
+        "upper": 0.9424217683003087
+      },
+      "negative_precision": {
+        "point": 0.9208556149732621,
+        "lower": 0.9019360423569894,
+        "upper": 0.937093448931358
+      },
+      "negative_recall": {
+        "point": 0.9609375,
+        "lower": 0.9477863854206079,
+        "upper": 0.9734541247075577
+      },
+      "negative_f1": {
+        "point": 0.9404696886947024,
+        "lower": 0.9283742016882417,
+        "upper": 0.9510185510679876
+      },
+      "positive_precision": {
+        "point": 0.9473684210526315,
+        "lower": 0.9301266115229175,
+        "upper": 0.9635293171418008
+      },
+      "positive_recall": {
+        "point": 0.8948863636363636,
+        "lower": 0.8705436894554066,
+        "upper": 0.9156626506024096
+      },
+      "positive_f1": {
+        "point": 0.9203798392987582,
+        "lower": 0.9050410970126158,
+        "upper": 0.9340339979212336
+      }
+    }
+  },
+  "tokenizer_oov": {
+    "num_texts": 16000,
+    "total_tokens": 306661,
+    "oov_tokens": 62608,
+    "oov_rate": 20.41602942663071,
+    "coverage": 79.58397057336929,
+    "unique_tokens": 15212,
+    "unique_oov_tokens": 10840
+  }
+}

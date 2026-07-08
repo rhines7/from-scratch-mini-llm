@@ -1,0 +1,105 @@
+{
+  "count": 20,
+  "examples": [
+    {
+      "text": "im not planning to get hammered i warned feeling virtuous",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i feel naughty and dirty sometimes but this gives me certain pleasure so why not",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i have gone to kitoben and worked with the children and on the playground i feel very joyful to be able to be working for others",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i cannot wait to be human again ahkman to feel your kiss but i am so frightened",
+      "true": "negative",
+      "predicted": "positive"
+    },
+    {
+      "text": "im starting to dislike the feeling of not caring about whats going to happen tomorrow",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i feel hot when i walk to the market in the sun",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i know he s feeling to me is sincere so i could tolerate these small trouble but i can t stand his this character in the performance of the sex life of husband and wife",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i only have a few hours of sleep i still feel i have to stay faithful to my goal",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i just feel so dirty",
+      "true": "negative",
+      "predicted": "positive"
+    },
+    {
+      "text": "i did feel reluctant to keep on going and drew focalors sigil with a black opium incense stick on a wall by grabbing the wooden part and pulling the incense part back slightly and allowing it to smack to wall leaving a black powder line and meditated",
+      "true": "negative",
+      "predicted": "positive"
+    },
+    {
+      "text": "i feel sentimental loyalty just as much as the next average joe you know im just as prone to irrational attachment as any super lucky super prosperous well educated white girl at the exact middle of her life",
+      "true": "negative",
+      "predicted": "positive"
+    },
+    {
+      "text": "i remember laying in the bath feeling really emotional knowing that i was going to bring my baby into the world on the day that miss cook was laid to rest",
+      "true": "negative",
+      "predicted": "positive"
+    },
+    {
+      "text": "i was feeling pretty triumphant i had held a little conversation with the cashier and she didn t realize i was deaf",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i like that these type of assumptions because it makes me feels a bit more positive",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i still feel a bit stunned and i suppose i should be racked with regret and shame",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i always feel kinda sad for them when the authority figures eventually show up on the scene and squeeze all of the risky fun out of their play time",
+      "true": "negative",
+      "predicted": "positive"
+    },
+    {
+      "text": "i work in a neighborhood school i do not feel respected or supported",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i feel really socially awkward and dont like to get out and meet new people and do things in groups and be adventurous",
+      "true": "negative",
+      "predicted": "positive"
+    },
+    {
+      "text": "i was feeling wednesday night so i wasn t thrilled to be in training again ha",
+      "true": "positive",
+      "predicted": "negative"
+    },
+    {
+      "text": "i always feel very afraid as i work on books egan tells kurt",
+      "true": "negative",
+      "predicted": "positive"
+    }
+  ]
+}

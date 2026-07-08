@@ -1,0 +1,37 @@
+{
+  "config": {
+    "max_new_tokens": 60,
+    "temperature": 0.8,
+    "top_k": 50,
+    "top_p": 0.9,
+    "repetition_penalty": 1.1,
+    "do_sample": true
+  },
+  "generations": [
+    {
+      "prompt": "Once upon a time",
+      "generated_text": "Once upon a time there was a girl called Jane. She was an old man who loved to go outside and strong, small town. One day, Jane was playing in the park with her friends and very curious house and Jane decided to explore the park and Jane would take a game full of them playing and Sarah was a",
+      "length": 60
+    },
+    {
+      "prompt": "One day, a little",
+      "generated_text": "One day, a little went to the park. It was a big tree with lots of flowers and so big field with lots of trees. The wind in the park. Every day, pond with tall grass. In the pond and flowers were two friends and pond, water lived, the sun, some other fish and other trees",
+      "length": 56
+    },
+    {
+      "prompt": "There was a",
+      "generated_text": "There was a in the park. It was a big, green field and colorful house with lots of grass and red park. The grass and bright field. Every day, flowers. The garden and little girl with lots of trees and little bird and little birds flying and birds flying in the sky. She saw lots of",
+      "length": 56
+    },
+    {
+      "prompt": "A boy and a girl",
+      "generated_text": "A boy and a girl and her girl went to the park. They saw a big park with a big slide. They saw a swing and lots of people playing on a big tree. They saw a pond and kids with flowers and birds and some other side with many big slide and yellow park. The slide and tall flowers and",
+      "length": 61
+    },
+    {
+      "prompt": "In a big forest",
+      "generated_text": "In a big forest old, there was a tiny lake. The warm water. He lived on the lake. He liked to see the lake and soft lake. All the pond one day of the other trees and the lake all of the other animals on the animals were the other fish and the other flowers were happy fish,",
+      "length": 58
+    }
+  ]
+}

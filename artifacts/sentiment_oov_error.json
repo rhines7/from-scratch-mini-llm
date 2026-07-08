@@ -1,0 +1,32 @@
+{
+  "n": 1600,
+  "correlation_oov_vs_error": -0.056476282498704816,
+  "mean_oov_correct": 22.778385890044827,
+  "mean_oov_incorrect": 21.496894728054357,
+  "buckets": [
+    {
+      "range": "0%",
+      "count": 4,
+      "accuracy": 0.5,
+      "mean_oov": 0.0
+    },
+    {
+      "range": "(0,10%]",
+      "count": 158,
+      "accuracy": 0.6329113924050633,
+      "mean_oov": 7.9171284547336755
+    },
+    {
+      "range": "(10,25%]",
+      "count": 935,
+      "accuracy": 0.6192513368983957,
+      "mean_oov": 18.056044746107986
+    },
+    {
+      "range": ">25%",
+      "count": 503,
+      "accuracy": 0.6878727634194831,
+      "mean_oov": 34.94595398567057
+    }
+  ]
+}
