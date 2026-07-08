@@ -106,8 +106,8 @@ complete pre-training plus sentiment run takes on the order of an hour, so headl
 metrics come from the committed artifacts rather than a required rerun.
 
 ```bash
-git clone https://github.com/Rhines7/qwen3-mini-llm.git
-cd qwen3-mini-llm
+git clone https://github.com/rhines7/from-scratch-mini-llm.git
+cd from-scratch-mini-llm
 pip install -r requirements.txt
 ```
 
