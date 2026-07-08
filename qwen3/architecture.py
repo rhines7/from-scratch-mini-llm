@@ -30,14 +30,16 @@ class Qwen3Config:
     num_kv_heads < num_heads to enable grouped-query attention; keep them equal
     for standard multi-head attention.
     """
-    # Model architecture
+    # Model architecture. Defaults match the 19.52M-parameter model used for the
+    # reported run (see pretrain.default_model_config), so instantiating
+    # Qwen3Config() reproduces that architecture rather than a larger placeholder.
     vocab_size: int = 7392  # Vocabulary size from the 10K TinyStories subset
-    max_seq_len: int = 512
-    d_model: int = 768  # Hidden dimension
-    num_layers: int = 12  # Number of transformer blocks
-    num_heads: int = 12  # Number of attention heads (must divide d_model)
-    num_kv_heads: int = 12  # For GQA: set < num_heads; for MHA: set = num_heads
-    intermediate_size: int = 2048  # FFN intermediate dimension (SwiGLU)
+    max_seq_len: int = 256
+    d_model: int = 512  # Hidden dimension
+    num_layers: int = 6  # Number of transformer blocks
+    num_heads: int = 8  # Number of attention heads (must divide d_model)
+    num_kv_heads: int = 8  # For GQA: set < num_heads; for MHA: set = num_heads
+    intermediate_size: int = 1024  # FFN intermediate dimension (SwiGLU)
 
     # RoPE settings
     rope_base: float = 10000.0  # Base frequency for RoPE (10000 for short sequences)
@@ -505,13 +507,17 @@ class Qwen3Model(nn.Module):
 
 def create_qwen3_small(
     vocab_size: int = 7392,
-    d_model: int = 768,
-    num_layers: int = 12,
-    num_heads: int = 12,
-    intermediate_size: int = 2048,
+    d_model: int = 512,
+    num_layers: int = 6,
+    num_heads: int = 8,
+    intermediate_size: int = 1024,
     **kwargs
 ) -> Qwen3Model:
-    """Build a Qwen3Model from the common knobs, forwarding extras to Qwen3Config."""
+    """Build a Qwen3Model from the common knobs, forwarding extras to Qwen3Config.
+
+    Defaults reproduce the 19.52M-parameter reported model; override any knob for
+    a different size.
+    """
     config = Qwen3Config(
         vocab_size=vocab_size,
         d_model=d_model,
